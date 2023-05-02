@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IoT | Geovanny Bolang</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        setInterval(function() {
+          $.get("http://iot.serangkota.go.id:8080/HTDXmVIHWa2bw_JvErBjzbwKiE9tqilB/get/V4", function(data) {
+            var suhu = data[0];
+            $("#suhu").text(suhu);
+          });
+        }, 1000); // Set interval 1 detik
+        
+        setInterval(function() {
+          $.get("http://iot.serangkota.go.id:8080/HTDXmVIHWa2bw_JvErBjzbwKiE9tqilB/get/V3", function(data) {
+            var kelembaban = data[0];
+            $("#kelembaban").text(kelembaban);
+          });
+        }, 1000); // Set interval 1 detik
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Monitoring Temperature and Humidity using DHT22</h1>
+    <p>Suhu: <span id="suhu"></span> &#8451;</p>
+    <p>Kelembaban: <span id="kelembaban"></span> %</p>
+  </body>
+</html>
