@@ -12,7 +12,7 @@ $(document).ready(function() {
       $.get("https://skripsi-e4a2a-default-rtdb.firebaseio.com/Hasil_Pembacaan/gas1.json", function(data) {
           var gas = "";
           for (var i = 0; i < data.length; i++) {
-              suhu += data[i];
+              gas += data[i];
           }
           $("#gas").text(gas);
       });
