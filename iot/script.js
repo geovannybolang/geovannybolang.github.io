@@ -1,6 +1,6 @@
 $(document).ready(function() {
     setInterval(function() {
-      $.get("http://iot.serangkota.go.id:8080/HTDXmVIHWa2bw_JvErBjzbwKiE9tqilB/get/V4", function(data) {
+      $.get("https://skripsi-e4a2a-default-rtdb.firebaseio.com/Hasil_Pembacaan/suhu1.json", function(data) {
         var suhu = data[0];
         $("#suhu").text(suhu);
       });
